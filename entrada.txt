@@ -1,0 +1,3 @@
+
+var jj:string = "HELLO";
+console.log(jj.toLowerCase());
