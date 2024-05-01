@@ -5,7 +5,7 @@ from entorno.entorno import entorno
 from estructuras.errores import errores
 from interfaz.expresion import expresion
 from entorno.value import Value
-class traducir(instruccion):
+class LowerCase(instruccion):
     def __init__(self,expresion,linea,columna):
         self.expresion=expresion
         self.linea=linea

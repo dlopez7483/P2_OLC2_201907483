@@ -42,6 +42,7 @@ class default (instruccion):
                  else:
                         errores.agregar_error("Error en la ejecucion del return","Return "+self.Entorno.nombre,self.linea,self.columna,"Semantico")
                         return None
-        
+ def traducir(self,Entorno,gen):
+     return None    
         
          

@@ -9,7 +9,7 @@ class console(instruccion):
      self.columna=columna
  def traducir(self,entorno,gen):
      for exp in self.expresion:
-            val = exp.execute(entorno, gen)
+            val = exp.traducir(entorno, gen)
             if (val.type == "NUMBER"):
                 # Imprimiendo expresion
                 gen.add_br()

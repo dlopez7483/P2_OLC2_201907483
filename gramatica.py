@@ -890,9 +890,17 @@ if __name__ == '__main__':
     print("************SALIDA***************")
     result = parser.parse(input_text)
     for i in range(len(result)):
-     valor= result[i].execute(entorno_global,generador_)
+     valor= result[i].execute(entorno_global)
     
-    print(generador_.get_final_code())
+    if (len(errores.errs)) == 0:
+      for i in range(len(result)):
+         result[i].traducir(entorno_global,generador_)
+      print(generador_.get_final_code())
+    
+    
+    errores.errs.clear()
+    print("EJECUTANDO CODIGO")
+    print(salida_instrucciones.instrucciones)
     
     
     

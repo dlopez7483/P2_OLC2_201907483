@@ -20,20 +20,20 @@ class declaracion(instruccion):
      if self.valor != None:
          valor = self.valor.execute(entorno)
          if self.tipo_dato == 'NUMBER' and isinstance(valor,int):
-             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,self.linea,self.columna)
+             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,'',self.linea,self.columna)
          elif self.tipo_dato == 'FLOAT' and isinstance(valor,float):
-             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,self.linea,self.columna)
+             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,'',self.linea,self.columna)
          elif self.tipo_dato == 'STRING' and isinstance(valor,str):
-             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,self.linea,self.columna)
+             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,'',self.linea,self.columna)
          elif self.tipo_dato == 'BOOLEAN' and isinstance(valor,bool):
-             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,self.linea,self.columna)
+             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,'',self.linea,self.columna)
          elif self.tipo_dato == 'CHAR' and isinstance(valor,str) and len(valor) == 1:
              print("entro a char")
              entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,self.linea,self.columna)
          elif self.tipo_dato == 'FLOAT' and isinstance(valor,int):
-             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,float(valor),self.linea,self.columna)
+             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,'',self.linea,self.columna)
          else:
-             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,None,self.linea,self.columna)
+             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,'',self.linea,self.columna)
 
             
              
@@ -42,11 +42,11 @@ class declaracion(instruccion):
     
      else:
          if self.tipo_dato == 'NUMBER':
-             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,0,self.linea,self.columna)
+             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,'',self.linea,self.columna)
          elif self.tipo_dato =='FLOAT':
-             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,0.0,self.linea,self.columna)
+             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,'',self.linea,self.columna)
          elif self.tipo_dato == 'STRING':
-             entorno.agregar_simbolo(self.id,"",self.tipo,self.linea,self.columna)
+             entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,valor,'',self.linea,self.columna)
          elif self.tipo_dato == 'BOOLEAN':
              entorno.agregar_simbolo(self.id,self.tipo,self.tipo_dato,False,self.linea,self.columna)
          elif self.tipo_dato == 'CHAR':

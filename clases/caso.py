@@ -14,7 +14,7 @@ class caso(instruccion):
  def traducir(self,Entorno,gen):
      gen.comment('Inicio caso')
      for ins in self.instrucciones:
-         i=ins.execute(Entorno,gen)
+         i=ins.traducir(Entorno,gen)
  def execute(self,Entorno):
      nuevo_entorno = entorno("caso",Entorno)
      self.Entorno=nuevo_entorno

@@ -223,7 +223,7 @@ class asignacion (instruccion):
          if simb.tipo!="CONST":
              
         
-             op=self.expresion.execute(entorno,gen)
+             op=self.expresion.traducir(entorno,gen)
              if 't' in str(op.value):
                   gen.add_move('t3',str(op.value))
              else:
@@ -265,7 +265,7 @@ class asignacion (instruccion):
          gen.add_br()
          gen.comment('Asignacion a un arreglo')
          if simb!=None and simb.tipo!="CONST":
-             index=self.id.expresion[0][0].execute(entorno,gen)
+             index=self.id.expresion[0][0].traducir(entorno,gen)
              if index.type!="NUMBER":
                  errores.append(nodo_error(self.linea,self.columna,'Semantico','El indice del arreglo debe ser de tipo NUMBER'))
                  return None
@@ -279,7 +279,7 @@ class asignacion (instruccion):
              gen.add_la('t1',simb.value)
              gen.add_lw('t1', '0(t1)')
              gen.add_operation('add', 't2', 't1', 't0')
-             op=self.expresion.execute(entorno,gen)
+             op=self.expresion.traducir(entorno,gen)
              if (op.type==simb.tipo_dato):
                  if 't' in str(op.value):
                      gen.add_move('t3',str(op.value))

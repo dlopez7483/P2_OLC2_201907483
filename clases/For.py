@@ -71,13 +71,13 @@ class For (instruccion):
                       gen.add_operation('bgt', 't6', 't5', skip)
                       
         for i in self.instrucciones:
-               i.execute(Entorno,gen)
+               i.traducir(Entorno,gen)
                 
         if isinstance(izq,id):
                gen.add_la('t1',izq.id)
                gen.add_lw('t6','0(t1)')
         else:
-               izq=izq.execute(Entorno,gen)
+               izq=izq.traducir(Entorno,gen)
                if 't' in str(izq.value):
                       gen.add_move('t3',str(izq.value))
                else:

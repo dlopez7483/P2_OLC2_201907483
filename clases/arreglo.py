@@ -23,7 +23,7 @@ class arreglo(expresion):
              if len(self.expresiones)>0:
                  
                  for exp in self.expresiones:
-                     valor=exp.execute(Entorno,gen)
+                     valor=exp.traducir(Entorno,gen)
                      if valor!=None:
                          if self.tipo_dato==valor.type:
                     
